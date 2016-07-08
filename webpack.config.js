@@ -13,8 +13,8 @@ const webpackConfig = {
     extensions: ['', '.js', '.jsx', '.json']
   },
   entry: {
-    app: ['./app/app'],
-    vendor: ['react','react-dom', 'redux', 'react-redux','react-router', 'jquery', 'lodash']
+    vendor: ['react', 'react-dom', 'react-router', 'redux', 'react-redux', 'axios', 'lodash'],
+    app: ['./app/app']
   },
   output: {
 
