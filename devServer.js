@@ -21,9 +21,6 @@ const isDev = process.env.NODE_ENV !== 'production';
  */
 
 
-
-
-
 if (isDev) {
   const compiler = webpack(config);
   app.use(require('webpack-dev-middleware')(compiler, {
@@ -38,11 +35,11 @@ if (isDev) {
     }
   }));
 
-
   app.use(require('webpack-hot-middleware')(compiler, {
     log: console.log
   }));
   app.use('/public/css', express.static(path.join(__dirname, 'public/css')));
+
 } else {
   app.use('/public', express.static(path.join(__dirname, 'public')));
 }
@@ -60,13 +57,6 @@ app.get('*', function(req, res, next) {
     res.sendFile(path.resolve(__dirname, 'index.html'));
   } else next()
 })
-
-
-// app.use(jsonServer.rewriter({
-//   '/api/': '/'
-// }))
-
-
 
 
 app.listen(port);

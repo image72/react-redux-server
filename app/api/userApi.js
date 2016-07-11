@@ -1,6 +1,6 @@
 import axios from 'axios';
 import store from '../store';
-import { getUsersSuccess, deleteUserSuccess, userProfileSuccess } from '../actions/user-actions';
+import { getUsersSuccess, deleteUserSuccess, userProfileSuccess } from '../actions/userActions';
 /**
  * Get all users
  */

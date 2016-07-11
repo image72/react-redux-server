@@ -1,6 +1,6 @@
 import axios from 'axios';
-import store from '../store';
-import { getWidgetsSuccess, deleteWidgetSuccess } from '../actions/widget-actions';
+import store from 'store';
+import { getWidgetsSuccess, deleteWidgetSuccess } from '../actions/widgetActions';
 
 /**
  * Get widgets

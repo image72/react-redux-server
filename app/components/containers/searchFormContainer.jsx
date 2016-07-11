@@ -1,8 +1,8 @@
 import React from 'react';
-import * as userApi from '../../api/user-api';
-import * as widgetApi from '../../api/widget-api';
-import { loadSearchLayout } from '../../actions/search-layout-actions';
-import SearchForm from '../views/search-form';
+import * as userApi from '../../api/userApi';
+import * as widgetApi from '../../api/widgetApi';
+import { loadSearchLayout } from '../../actions/searchLayoutActions';
+import SearchForm from '../views/searchForm';
 
 const SearchFormContainer = React.createClass({
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SearchLayout from '../layouts/search-layout';
+import SearchLayout from '../layouts/searchLayout';
 
 const mapStateToProps = function(store) {
 

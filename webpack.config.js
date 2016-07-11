@@ -8,18 +8,22 @@ const webpackConfig = {
   name: 'client',
   target: 'web',
   devtool: devtool,
+  // context: path.join(__dirname, 'app'),
   resolve: {
-    root: path.join(__dirname, 'app'),
+    root: [__dirname,path.join(__dirname, 'app'), path.join(__dirname, 'node_modules')],
     extensions: ['', '.js', '.jsx', '.json']
   },
+  resolveLoader: {
+    root: path.join(__dirname, 'node_modules')
+  },
   entry: {
-    vendor: ['react', 'react-dom', 'react-router', 'redux', 'react-redux', 'axios', 'lodash'],
+    // vendor: ['react', 'react-dom', 'react-router', 'redux', 'react-redux', 'axios', 'lodash'],
     app: ['./app/app']
   },
   output: {
 
     path: path.join(__dirname, 'public'),
-    filename: '[name].js',
+    filename: 'app.js',
     publicPath: '/public/'
   },
   plugins: [],
@@ -72,60 +76,4 @@ if (isDev) {
   )
 }
 
-
-
-
 module.exports = webpackConfig;
-//
-//
-// module.exports = {
-//   devtool: 'cheap-module-eval-source-map',
-//   entry: [
-//     // 'eventsource-polyfill', // necessary for hot reloading with IE
-//     'webpack-hot-middleware/client',
-//     './app/app'
-//   ],
-//   output: {
-//     path: path.join(__dirname, 'public'),
-//     filename: 'bundle.js',
-//     publicPath: '/static/'
-//   },
-//   plugins: [
-//     /**
-//      * This is where the magic happens! You need this to enable Hot Module Replacement!
-//      */
-//     new webpack.HotModuleReplacementPlugin(),
-//     /**
-//      * NoErrorsPlugin prevents your webpack CLI from exiting with an error code if
-//      * there are errors during compiling - essentially, assets that include errors
-//      * will not be emitted. If you want your webpack to 'fail', you need to check out
-//      * the bail option.
-//      */
-//     new webpack.NoErrorsPlugin(),
-//     /**
-//      * DefinePlugin allows us to define free variables, in any webpack build, you can
-//      * use it to create separate builds with debug logging or adding global constants!
-//      * Here, we use it to specify a development build.
-//      */
-//     new webpack.DefinePlugin({
-//       'process.env.NODE_ENV': JSON.stringify('development')
-//     }),
-//   ],
-//   module: {
-//     loaders: [
-//       {
-//         test: /\.js?/,
-//         exclude: [/node_modules/, /styles/],
-//         loaders: ['babel'],
-//         include: path.join(__dirname, 'app')
-//       },
-//       {
-//         test: /\.scss$/,
-//         loader: 'style!css!sass'
-//       }
-//     ]
-//   },
-//   resolve: {
-//     root: path.resolve('app')
-//   }
-// };
